@@ -1,3 +1,5 @@
+LET'S UNDERSTAND THE MYSTERY OF DOCKER 😁
+
 # Why use DOCKER:- Docker helps to ease installation of softwares , applications (without worrying about setup and dependencies). not only on your PC but on web server or cloud based platform.
 # docker run -it redis :- an instance of redis up and run on my computer 
 # What is DOCKER:- It is a platform or ecosystem around creating and running containers.
