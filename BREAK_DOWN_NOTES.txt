@@ -4,7 +4,7 @@ LET'S UNDERSTAND THE MYSTERY OF DOCKER 😁
 # docker run -it redis :- an instance of redis up and run on my computer 
 # What is DOCKER:- It is a platform or ecosystem around creating and running containers.
 # DOCKER ecosystem :- Docker Client, Docker Server, Docker Machine, Docker Images, Docker Hub, Docker Compose.
-# Containers?:- 
+# Containers:- 
 When running the command like:- docker run -it redis (When running this command the Dokcer CLI reached out to Docker Hub and downloaded a single file called an "image" # Image :- An image is a single file that containing all dependencies and all configurations to run a very specific program For e.g Reddis, Jupiter
 This single file is stored on your hardrive and we can use this image to create a container . # Container :- Container is an instance of an image , like a running program , So we can say Container is a program with its own isolated set of hardware resources .
 a "container" is really a process or a set of processes that have a grouping of resourcesspecifically assigned to it.
