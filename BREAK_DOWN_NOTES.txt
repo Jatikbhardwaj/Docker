@@ -50,3 +50,14 @@ docker kill forcefully terminates the container by immediately sending a SIGKILL
 # RUN command use to execute some command while we are preparing our custom image 
 # CMD or command instruction specifies what should be executed when our image is used to start up a new container 
 # The docker build . command is used to build a Docker image based on the instructions provided in the Dockerfile located in the current directory (.). The docker build command is a fundamental step in the process of creating a Docker image from your application code and configurations.
+
+# "Image tagging" is a way to provide a human-readable and meaningful label to an image. It helps identify and version your images, making it easier to manage and share them. The -t option in the docker build command is used to specify a tag for the image.
+e.g:- docker build -t jatik_learning_image/redis:latest .
+docker build: This is the command used to build a Docker image.
+
+-t jatik_learning_image/redis:latest: The -t option allows you to tag the image with a name and, optionally, a tag. In this case:jatik_learning_image/redis is the repository name. It's common to use a format like <username or organization>/<imagename> to provide a unique identifier.
+"latest" is the tag. The tag is used to version your images. In this example, latest is often used to indicate the most recent version of the image
+Docker will build an image based on the Dockerfile in the current directory, and it will be tagged as jatik_learning_image/redis:latest. The resulting image can then be referenced using this tag in subsequent commands or when pushing the image to a container registry.
+
+#Running the command docker run jatik_learning_image/redis creates and starts a container based on the Docker image with the specified tag (jatik_learning_image/redis)
+
