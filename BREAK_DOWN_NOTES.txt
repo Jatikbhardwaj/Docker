@@ -60,4 +60,127 @@ docker build: This is the command used to build a Docker image.
 Docker will build an image based on the Dockerfile in the current directory, and it will be tagged as jatik_learning_image/redis:latest. The resulting image can then be referenced using this tag in subsequent commands or when pushing the image to a container registry.
 
 # Running the command docker run jatik_learning_image/redis creates and starts a container based on the Docker image with the specified tag (jatik_learning_image/redis)
+COMING SOON: API-Driven Bare Metal with Intel® MAX 1100 GPUs!
 
+
+
+Introduction
+
+Docker is a popular tool for deploying and running containerized applications. It is known for its reliability, resource efficiency, and scalability, making it a frequent choice for development teams.
+
+In this article, you will learn what Docker is, its essential components, and the pros and cons of using the platform.
+
+What is Docker?
+Introduction to Containerization
+Containerization is a development process that involves shipping an application and the dependencies necessary for its operation in an executable unit called the container. The concept of a container is explained in detail in the following sections.
+
+What Are Containers?
+Containers are lightweight virtualized runtime environments for running applications. A container represents a software package with code, system tools, runtime, libraries, dependencies, and configuration files required for running a specific application. Each container is independent and isolated from the host and other containers.
+
+A template containing instructions and data necessary to build the container is called an image. Images are immutable (i.e., they cannot be changed), so any modification in the structure and content requires creating a new Docker image.
+
+Containers vs. Virtual Machines
+Containers perform virtualization at the application level. It means they share the operating system kernel with the host and virtualize on top of it.
+
+Virtual machines are entirely independent of the host OS because they sit atop a hypervisor that isolates them. Each VM requires its own operating system, which can differ from the host's.
+
+The diagram below illustrates the difference between containers and virtual machines.
+
+Docker containers vs virtual machines.
+Virtual machines often consume a lot of host system resources. A VM running a small web app still needs to run the entire OS in the background.
+
+Containers are lightweight, fast, and simple to configure. They allow developers to work on the same application in different environments without affecting performance.
+
+Note: To maximize container performance, implement Docker container management best practices.
+
+Why Use Containers?
+Containers bring numerous benefits to the software development process. Integrating containers into a development workflow allows developers to:
+
+Run multiple workloads on fewer resources.
+Isolate and segregate applications.
+Standardize environments to ensure consistency across development and release cycles.
+Streamline the software development lifecycle (SDLC) and support other CI/CD workflows.
+Develop highly portable workloads that can run on multi-cloud platforms.
+Introduce an effective version control system for an application.
+What Is Docker?
+Docker is an open-source containerization platform for developing, deploying, and managing container applications. The project started as a Platform as a Service solution called DotCloud. However, many developers showed great interest in the underlying technology, software containers, which soon became the platform's focus.
+
+Developer teams mainly use Docker to create distributed applications that work efficiently in different environments. By making the software system agnostic, Docker eliminates compatibility issues and allows the creation of cross-platform apps.
+
+How Does Docker Work?
+Docker is a client-server platform, i.e., it enables multiple clients to control deployments on a single server. The following sections explain the essential elements of Docker's architecture, introduce Docker objects and list tools commonly used with the platform.
+
+Docker Architecture
+The main element of Docker architecture is the Docker Engine (DE). It comprises a lightweight runtime system and the underlying client-server technology that creates and manages containers.
+
+Docker Engine consists of three components:
+
+Server. Docker's server is a daemon process (dockerd) responsible for creating and managing containers.
+Rest API. Docker uses REST API to establish communication with the clients that instruct dockerd what to do.
+Command-Line Interface (CLI). Each Docker client communicates with the daemon by issuing Docker CLI commands.
+The sections below explain some of the essential concepts in Docker architecture.
+
+Docker Daemon
+The Docker daemon is a persistent background process created by the Docker Engine. This process accepts and fulfills API requests related to building, running, and managing Docker containers and images. The daemon uses a REST API that enables users to issue Docker CLI commands or use a client library to perform container-related actions.
+
+Docker Host
+A Docker host is any system with a running Docker instance. Hosts interact with the Docker daemon to create and manage containers.
+
+While the Docker host is commonly a single, independent machine, container orchestrators such as Docker Swarm and Kubernetes can distribute the role of a single host across multiple systems. Distributed hosts facilitate scaling and container orchestration.
+
+Docker Client
+A Docker client is a tool that enables users to interact with the Docker daemon on their system. The client features a set of Docker CLI commands that enable the creation and management of containers.
+
+Docker Objects
+Docker objects are components of a Docker deployment that help package and distribute applications. The following sections present the essential Docker objects.
+
+Docker Container
+A container is a runtime environment containing the application code alongside the dependencies (libraries and files). Docker containers are designed to comply with the Open Container Initiative (OCI) rules, making them compatible with other OCI container engines.
+
+Docker Image
+A Docker image is a template for building containers. Like virtual machine snapshots, Docker images are immutable, read-only files consisting of the source code, libraries, dependencies, tools, and other files necessary to run an application.
+
+Docker CLI commands such as docker run and docker create use the app data in the image to create a Docker container that runs the given app.
+
+From Dockefiles to Docker images to Docker containers.
+Note: Maintaining small images is essential for producing lightweight, fast containers. Utilizing a lighter image base, avoiding unnecessary layers, and using the .dockerignore file are just a few ways of keeping your Docker images small.
+
+Dockerfile
+A Dockerfile is a script that consists of a set of instructions on how to build a Docker image. These instructions include specifying the OS, languages, Docker environment variables, file locations, network ports, and other components needed to run the image. All the commands in the file are grouped and executed automatically.
+
+A Docker image has multiple layers. A new read-write layer (container layer) is added once a user runs an image to create a container. The additional layer accepts changes, which the user can commit to create a new Docker image for future use.
+
+Docker image layers.
+Docker Volume
+Instead of adding new layers to an image, a better solution to preserve data produced by a running container is using Docker volumes. This helpful tool allows users to save data, share it between containers, and mount it to new ones.
+
+Volumes are independent of the container life cycle as they are stored on the host.
+
+Docker Tools
+Docker features a rich ecosystem of tools to enhance its functionality and make it easier to work with many containers. Below are some of the most popular Docker tools available at the moment.
+
+Docker Desktop
+Docker Desktop is an application that allows users to quickly manage containers on Windows and macOS using a graphical user interface. It is a simple way of installing and setting up the entire Docker development environment.
+
+It includes Docker Engine, Docker Compose, Docker CLI client, Docker Content Trust, Kubernetes, and Credential Helper.
+
+Docker Registry
+Docker Registry is a system that organizes storage and distribution of Docker images. Each registry consists of repositories that host images. Users can pull images from a repository to their local system or push the image to the repository for easier access.
+
+Docker Hub
+Docker Hub is the largest repository of container images. It supplies over 100,000 images created by open-source projects, software vendors, and the Docker community.
+
+The platform allows users to ship their applications anywhere quickly, collaborate with teammates, and automate builds for faster integration to a development pipeline.
+
+Like in GitHub, developers push and pull container images from Docker Hub and decide whether to keep them public or private.
+
+Docker hub front page.
+Docker Swarm
+Docker Swarm is a tool that allows developers to create a cluster of Docker nodes, i.e., physical machines with Docker installed, and manage it as a single system. Each swarm consists of:
+
+A swarm manager that controls the nodes in the swarm and enables the orchestration and scheduling of containers.
+Worker nodes that receive and execute tasks from the swarm manager.
+Docker Compose
+Docker Compose is a tool that simplifies running and managing multiple containers simultaneously. It strings multiple containers and controls them through a single coordinated command.
+
+With Docker Compose, users can launch, execute, manage, and close containers with one command. These actions are performed using a YAML file to configure the application's services.
